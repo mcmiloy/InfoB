@@ -1,0 +1,52 @@
+Befehle und Daten sind binaer dargestelt.
+
+In der ALU werden logische/arithmetische Operationen durchgefuehrt.
+
+Das Programm und die Daten befinden sich im Hauptspeicher, sie sind unabhaengig von der Struktur des Rechners.Sie sind veraenderbar.
+
+Der Hauptspeicher ist in Zellen gleicher Groesse geteilt und fortlaufend nummeriert(Adresse).
+
+Ein Programm ist eine Folge von Befehlen die i.d.R. in der gegebene Reihenfolge ausgefuehrt werden (Es gibt Ausnahmen).
+
+Befehle und Daten sind binaer dargestellt.
+
+In der ALU werden logische/arithmetische Operationen durchgefuehrt.
+
+Das Steuerwerk ist fuer die Interpretation von Befehlen zustaendig.
+
+Die Programmausfuehrung erfolgt in Zyklen, die vom Taktgeber gesteuert werden.
+
+Das Steuerwerk enthaelt einen Befehlszaehler (Programm Counter, PC), der die Adresse des naechsten auszufuehrenden Befehls enthaelt.
+
+Ueber das Bussystem kommunizieren die Komponenten, indem sie Daten, Adressen und Takt austauschen.
+
+Ablauf eines Zyklus:
+  1. Steuerwerk holt den naechsten Befehlt aus dem Speicher (siehe Befehlszaehler)
+  2. Steuerwerk interpretiert den Befehl und veranlasst entsprechende Massnahmen (Rechnung in der ALU, Read/Write,
+     Vergleiche durchfuehren, Input/Output)
+  3. Steuerwerk aktualisiert den Befehlszaehler
+
+Impoerative Programmiersprachenbilden dieses Muster auf eine Hoehere Abstraktionsebene. 
+Das wesentliche Konzept in einer imperativen Programmiersprache: !Zustand! (Konfiguration)
+Zustand: Gesamtheit aller Speicherinhalte, Registerinhalte, Position der Ein-/Ausgabegeraete, Inhalt des Befehlszaehlers.
+
+Ein imperatives Programm ist eine Folge von Anweisungen, die i.d.R hintereinander ausgefuehrt und den Zustand aendern.
+
+Es gibt (mind.) 3 Arten von Anweisungen:
+  1. Zuweisungen (Assignments)
+  2. Kontrollstrukturen (control flow)
+  3. Ein-/Ausgabe (I/O)
+
+ Zuweisungen: Aenderugen des Hauptspeichers
+  Variable := Auddruck
+Sie werten einen Ausdruck aus und weisen das Ergebnis einer Variable zu.
+
+Ein Ausdruck hat immer einen Wert und einen Typ. Der Ausdruck kann bestehen aus arith., boolsch., Operationen, Operationen auf
+Zeichenketten (Strings), Funktionsaufrufen, etc.
+
+Eine Variable ist ein Name fuer einen Speicherbereich (C++).
+
+Wirkung einer Zuweisung:
+Ausdruck wird ausgewertet, das liefrt ein Ergebnis,
+welches der Variablen zugewiesen wird.
+Achtung!: Bei der Auswertung eines Ausdrucks kann es zu weiteren Aenderunge des Zustands kommen.
