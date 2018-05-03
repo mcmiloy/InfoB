@@ -28,3 +28,23 @@ int main(){
 
     return 0;
 }
+
+// Beispiel:
+
+// emilio@emilios-pc:~/code/InfoB$ ./a.out
+// Herzlich Wiklommen beim Zahlenraten. :-)
+// Geben sie eine Zahl ein: 50
+// Die gesuchte Zahl ist groesser
+// Geben sie eine Zahl ein: 75
+// Die gesuchte Zahl ist groesser
+// Geben sie eine Zahl ein: 87
+// Die gesuchte Zahl ist groesser
+// Geben sie eine Zahl ein: 94
+// Die gesuchte Zahl ist groesser
+// Geben sie eine Zahl ein: 97
+// Die gesuchte Zahl ist kleiner
+// Geben sie eine Zahl ein: 96
+// Die gesuchte Zahl ist kleiner
+// Geben sie eine Zahl ein: 95
+// Sie haben nur 7 Versuche benoetigt. Das ist Super!
+// emilio@emilios-pc:~/code/InfoB$ 

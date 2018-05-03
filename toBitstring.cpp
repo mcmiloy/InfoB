@@ -37,3 +37,22 @@ std::string toSys(int input, int sys){
     }
     return res;
 }
+
+// Beispiele:
+
+// emilio@emilios-pc:~/code/InfoB$ ./a.out
+// Geben sie eine nicht-negative Zahl ein: 12
+// In welches Zahlensystem soll umgerechnet werden?(2-16): 2
+// Die 2-Darstellung der 12 ist: 1100
+// emilio@emilios-pc:~/code/InfoB$ ./a.out
+// Geben sie eine nicht-negative Zahl ein: 12
+// In welches Zahlensystem soll umgerechnet werden?(2-16): 16
+// Die 16-Darstellung der 12 ist: C
+// emilio@emilios-pc:~/code/InfoB$ ./a.out
+// Geben sie eine nicht-negative Zahl ein: 16
+// In welches Zahlensystem soll umgerechnet werden?(2-16): 2
+// Die 2-Darstellung der 16 ist: 10000
+// emilio@emilios-pc:~/code/InfoB$ ./a.out
+// Geben sie eine nicht-negative Zahl ein: 16
+// In welches Zahlensystem soll umgerechnet werden?(2-16): 10
+// Die 10-Darstellung der 16 ist: 16
