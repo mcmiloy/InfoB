@@ -13,8 +13,9 @@ int main(){
     // cout << char(97) << endl; //This is an 'a'
     // cout << char(122) << endl; //This is a 'z'
 
-    string text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    "Vivamus in ultricies erat, nec volutpat lacus.";
+    cout << "Bitte text eingeben: ";
+    string text;
+    getline(cin, text);
 
     std::map<char, int> chars;
     for(char c=65; c<91; ++c) // I did the capital letters as well...
