@@ -9,7 +9,7 @@ using std::string;
 
 int main(){
     // cout << char(65) << endl; //This is an 'A'
-    // cout << char(122) << endl; //This is a 'Z'
+    // cout << char(90) << endl; //This is a 'Z'
     // cout << char(97) << endl; //This is an 'a'
     // cout << char(122) << endl; //This is a 'z'
 
@@ -30,7 +30,5 @@ int main(){
 
     for(auto it = chars.begin(); it != chars.end(); ++it)
         cout << it->first << ": " << it->second << endl;
-
-    std::cout << char(90) << std::endl;
     
 }
