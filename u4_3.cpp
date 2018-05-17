@@ -24,7 +24,7 @@ using std::vector;
 // 6. if amount is smaller than zero, it was not possible to represent amount with available coins: throw error
 // 7. else return vector result
 
-// help function for b)
+// helper function for b)
 
 int find_largest_smaller(vector<int> vec, int num){
     int i = 0;
@@ -34,7 +34,7 @@ int find_largest_smaller(vector<int> vec, int num){
     return vec[i];
 }
 
-// help function for c)
+// helper function for c)
 
 int find_largest_smaller_recursive(vector<int> vec, int num){
     if(vec[0] <= num){
