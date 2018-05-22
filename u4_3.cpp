@@ -1,15 +1,30 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <iterator>
-#include <initializer_list>
-#include <algorithm>
-#include <exception>
+#include <algorithm> // std::sort
+#include <exception> // std::logic_error
 using std::cin;
 using std::cout;
 using std::endl;
 using std::string;
 using std::vector;
+
+// a)
+// greedy algorithm:
+
+// given: a list of available coins,
+//        an amount which should be represented with the available coins.
+
+// 0. check available coins is not empty, else throw error
+// 1. sort the list of coins from larger to smaller
+// 2. iterate through list of coins until you find the first coin which is smaller than amount
+// 3. append said coin into a vector storing the result
+// 4. subtract the amount you stored in result from the previous amount to obtain new amount
+// 5. repeat steps 2-4 until amount smaller or equal to zero
+// 6. if amount is smaller than zero, it was not possible to represent amount with available coins: throw error
+// 7. else return vector result
+
+// helper function for b)
 
 int find_largest_smaller(vector<int> vec, int num){
     int i = 0;
@@ -19,8 +34,9 @@ int find_largest_smaller(vector<int> vec, int num){
     return vec[i];
 }
 
+// helper function for c)
+
 int find_largest_smaller_recursive(vector<int> vec, int num){
-    if(vec.empty()) throw std::logic_error("invalid coin list");
     if(vec[0] <= num){
         return vec[0];
     } else {
@@ -29,8 +45,10 @@ int find_largest_smaller_recursive(vector<int> vec, int num){
     }
 }
 
+// b)
 
 vector<int> change(vector<int> coin_types_v, int amount){
+    if(coin_types_v.empty()) throw std::logic_error("invalid coin list");    
     std::sort(coin_types_v.begin(), coin_types_v.end(), [](int i, int j){return j<i;});
 
     vector<int> res;
@@ -42,8 +60,10 @@ vector<int> change(vector<int> coin_types_v, int amount){
     return res;
 }
 
+// c)
 
 vector<int> change_recursive(vector<int> coin_types_v, int amount){
+    if(coin_types_v.empty()) throw std::logic_error("invalid coin list");        
     std::sort(coin_types_v.begin(), coin_types_v.end(), [](int i, int j){return j<i;});
 
     if(amount == 0){
@@ -55,6 +75,11 @@ vector<int> change_recursive(vector<int> coin_types_v, int amount){
         return pass;
     }
 }
+
+// d)
+// greedy ist nicht optimal:
+// Muenzen: {1,15,25}, Geld: 30
+// greedy: 25,1,1,1,1,1; optimal: 15, 15
 
 
 int main(){
@@ -75,8 +100,6 @@ int main(){
     for(auto item: mychange) cout << item << ", ";
         cout << endl;
     
-    // vector<int> coins {10,5,2,1};
-    // cout << find_largest_smaller_recursive(coins, 1) << endl;
 
     return 0;
 }
