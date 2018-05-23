@@ -9,10 +9,10 @@ using std::vector;
 
 
 // a)
-int max_index_recursive(int a[], int size){
+int ind_of_max_recursive(int a[], int size){
     if(size==1) return 0;
     
-    int index = max_index_recursive(a, size-1);
+    int index = ind_of_max_recursive(a, size-1);
     if(a[size-1] >= a[index]) {
         return size-1;
     } else {
@@ -22,7 +22,7 @@ int max_index_recursive(int a[], int size){
 
 void selectsort_recursive(int a[], int size){
     if(size>=2){
-        int max_in_a = max_index_recursive(a, size);
+        int max_in_a = ind_of_max_recursive(a, size);
         int temp = a[max_in_a];
         a[max_in_a] = a[size-1];
         a[size-1] = temp;
@@ -36,15 +36,15 @@ double sprod_rec(double a[], double b[], int size){
     if(size==0){
         return 0;
     } else {
-        return a[size-1] * a[size-1] + sprod_rec(a, b, size-1);
+        return a[size-1] * b[size-1] + sprod_rec(a, b, size-1);
     }
 }
 
 
 double sprod_it(double a[], double b[], int size){
-    double res = 1;
+    double res = 0;
     for(int i=0; i<size; ++i){
-        res *= (a[i] * b[i]);
+        res += (a[i] * b[i]);
     }
     return res;
 }
