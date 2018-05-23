@@ -7,31 +7,45 @@ using std::cin;
 using std::endl;
 
 
-int myabs(int num){
-    return num >= 0 ? num : -num;
-}
-
-bool ex_1_1_naive(vector<int> li){
+bool ex_1_1(vector<int> li){
     std::sort(li.begin(), li.end());
-    for(auto it = li.begin(); it != li.end(); ++it){
-        cout << *it << " " << *(it + 1) << endl;
-        if(*it - *(it + 1) < -10) continue;
-        else return true;
+    for(auto it = li.begin(); it != (li.end()-1); ++it){
+        if(*it - *(it + 1) >= -10) return true;
     }
+    return false;
 }
 
-bool ex_1_2_naive(vector<int> l1, vector<int> l2, vector<int> l3){
+bool ex_1_2(vector<int> l1, vector<int> l2, vector<int> l3){
+    std::sort(l1.begin(), l1.end());
+    std::sort(l2.begin(), l2.end());
+    std::sort(l3.begin(), l3.end());
     for(auto it1 = l1.begin(); it1 != l1.end(); ++it1){
         for(auto it2 = l2.begin(); it2 != l2.end(); ++it2){
+            if((*l3.begin()) + (*it2) > -(*it1)){
+                cout << "broke out: " << *it2 << " + " << *(l3.begin()) << " > " << -(*it1) << endl;
+                return false;
+            }
+
             for(auto it3 = l3.begin(); it3 != l3.end(); ++it3){
-                if(*it1 + *it2 + *it3 == 0) return true;
+                if((*it3) + (*it2) == -(*it1)) return true;
+                else if((*it3) + (*it2) > -(*it1)) break;
             }
         }
     }
+    return false;
 }
 
 
 int main(){
-    vector<int> vec1_1 = {-20,-2,0,6,25,121};
-    cout << ex_1_1_naive(vec1_1) << endl;
+    vector<int> vec = {2,14,15};
+    cout << (ex_1_1(vec) == 0 ? "false" : "true") << endl;
+    vec = {2, 14, 35};
+    cout << (ex_1_1(vec) == 0 ? "false" : "true") << endl;
+    
+
+
+    vector<int> vec1 = {0,2};
+    vector<int> vec2 = {2, 5};
+    vector<int> vec3 = {1, 5};
+    cout << ex_1_2(vec1, vec2, vec3) << endl;
 }
