@@ -38,9 +38,9 @@ bool ex_1_2(vector<int> l1, vector<int> l2, vector<int> l3){
 
 int main(){
     vector<int> vec = {2,14,15};
-    cout << (ex_1_1(vec) == 0 ? "false" : "true") << endl;
+    cout << (ex_1_1(vec) ? "true" : "false") << endl;
     vec = {2, 14, 35};
-    cout << (ex_1_1(vec) == 0 ? "false" : "true") << endl;
+    cout << (ex_1_1(vec) ? "true" : "false") << endl;
     
 
 
